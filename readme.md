@@ -199,3 +199,22 @@ console.log(katak7.isMamalia); // ini ga bisa akan error karena visibility nya p
 console.log(katak7.name); // ini bisa karena visivility nya public
 console.log(katak7.kaki); //  ini ga bisa akan error karena visibility nya private
 ```
+
+---
+
+## Readonly
+
+- keyword yang berfungsi agar sebuah propery tidak bisa di ubah value nya
+- biasa di sebut juga immutable
+- perbedaan const dengan readonly terdapat pada tempat penggunaanya
+- const di gunakan agar sebuah variable bersifat immutable
+- readonly di gunakan agar sebuah property dalam sebuah class bersifat immutable
+
+```ts
+class Person {
+  public readonly gender: string = "Pria";
+}
+
+const person = new Person();
+person.gender = "Wanita"; // ga akan bisa, akan terjadi error
+```
