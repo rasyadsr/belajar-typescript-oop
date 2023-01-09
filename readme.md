@@ -130,3 +130,28 @@ class Katak extends HewanAmfibi {
 const katak = new Katak("katak", 2, false);
 console.log(katak);
 ```
+
+---
+
+## Method Overriding
+
+- berfungsi agar child class bisa mereplace method yang ada di parent class
+- kalau child class tidak memiliki methhod seperti pada parent nya, maka child akan merujuk ke parent
+- jika child class memiliki method seperti parent nya, maka akan di lakukan override, child akan merujuk ke class child itu sendiri
+
+```ts
+class Hewan6 {
+  bernafas(): void {
+    console.log("sedang bernafas");
+  }
+}
+
+class Katak6 extends Hewan6 {
+  bernafas(): void {
+    console.log("malas bernafas");
+  }
+}
+
+const katak6 = new Katak6();
+katak6.bernafas(); // malas bernafas
+```
