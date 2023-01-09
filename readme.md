@@ -155,3 +155,47 @@ class Katak6 extends Hewan6 {
 const katak6 = new Katak6();
 katak6.bernafas(); // malas bernafas
 ```
+
+---
+
+## Visibility
+
+- berguna untuk mengatur hak akses terhadap property dan method dari sebuah class, jadi dengan menggunakan visibility ini anda dapat mengatur, property dan method tersebut bisa diakses darimana saja
+- public : bisa di akses dimana saja, baik di global, class child, dan class itu sendiri
+- private : hanya bisa di akses oleh class child dan class itu sendiri
+- protected : hanya bisa di akses oleh class itu sendiri
+
+```ts
+class Hewan7 {
+  public name: string;
+  protected isMamalia: boolean;
+  private kaki: number;
+
+  constructor(name: string, kaki: number, isMamalia: boolean) {
+    this.name = name;
+    this.kaki = kaki;
+    this.isMamalia = isMamalia;
+  }
+}
+
+class Katak7 extends Hewan7 {
+  private umurKatak: number = 20;
+
+  getUmur() {
+    console.log(this.umurKatak);
+  }
+
+  getKakiParent() {
+    console.log(this.kaki); // ga bisa ini akan terjadi error
+  }
+
+  getIsMamaliaParent() {
+    console.log(this.isMamalia); // ini bisa karena isMamalia visibility nya protected
+  }
+}
+
+const katak7 = new Katak7("asdf", 4, false);
+console.log(katak7.isMamalia); // ini ga bisa akan error karena visibility nya protected
+console.log(katak7.name); // ini bisa karena visivility nya public
+console.log(katak7.kaki); //  ini ga bisa akan error karena visibility nya private
+```
