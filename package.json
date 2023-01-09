@@ -10,6 +10,6 @@
   "scripts": {
     "tsc": "rm -rf build/ && tsc",
     "ts": "rm -rf build/ && tsc -w",
-    "dev": "nodemon ./build/constructor.js"
+    "dev": "nodemon ./build/property_method.js"
   }
 }
