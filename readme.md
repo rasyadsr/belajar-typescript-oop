@@ -11,3 +11,15 @@ console.log(typeof Hewan); // hasil nya function, karena di javascript tidak ada
 ```
 
 ---
+
+## Constructor
+
+```ts
+class HewanLain {
+  constructor() {
+    console.log("constructor akan selalu di panggil terlebih dahulu");
+  }
+}
+
+const kangguru = new HewanLain(); //  hasil nya constructor akan selalu di panggil terlebih dahulu ketika object di instansiasikan
+```
