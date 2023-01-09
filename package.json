@@ -10,6 +10,6 @@
   "scripts": {
     "tsc": "rm -rf build/ && tsc",
     "ts": "rm -rf build/ && tsc -w",
-    "dev": "nodemon ./build/inheritance.js"
+    "dev": "nodemon ./build/super_constructor.js"
   }
 }
