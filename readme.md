@@ -242,3 +242,31 @@ const productSatu = new ProductA();
 productSatu.price = 2000; // akan masuk ke fungsi setter
 console.log(productSatu.price); // hasil dari fungsi getter
 ```
+
+---
+
+## Static keyword
+
+- ketika kita memberi keyword static pada sebuah property / method maka itu akan menempel pada class bukan pada object
+
+```ts
+class Ayam {
+  static kaki: number = 2;
+
+  static jalan(): void {
+    // method jalan ini, nempel nya di class jadi karena sama" nempel di class method jalan ini bisa akses property kaki
+    console.log(`ayam berjalan dengan ${this.kaki} kaki`);
+  }
+
+  getKaki() {
+    // karena kaki ini bersifat static, menempel pada class nya bukan pada object
+    console.log(Ayam.kaki);
+  }
+}
+
+Ayam.jalan();
+console.log(Ayam.kaki);
+
+const ayam = new Ayam();
+ayam.getKaki();
+```
