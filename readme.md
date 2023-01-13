@@ -642,3 +642,23 @@ console.log(hijabMahal2);
 hijabMahal.sell();
 hijabMahal2.sell();
 ```
+
+---
+
+## Generic
+
+- menjadikan sebuah function / class / interface bisa memiliki berbagai macam tipe data yang dynamis
+
+```ts
+/* <T> adalah type generic nya*/
+function getData<T>(value: T) {
+  return value;
+}
+
+/** Data nya bisa dinamis, kita harus definisikan data type nya */
+const data = getData<string>("hello world");
+console.log(data.toUpperCase());
+
+const number = getData<number>(1212);
+console.log(number.toFixed(2));
+```
