@@ -399,3 +399,19 @@ game.back();
 game.menu();
 game.home();
 ```
+
+---
+
+## Interface Optional Parameter
+
+- berfungsi agar property / method yang di beri optional parameter bisa di abaikan
+
+```ts
+interface Teacher {
+  name: string;
+  age: number;
+  phone?: number; // phone ini dia bersifat optional
+}
+
+let teacher: Teacher = { name: "rasyad", age: 18 };
+```
