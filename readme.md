@@ -662,3 +662,19 @@ console.log(data.toUpperCase());
 const number = getData<number>(1212);
 console.log(number.toFixed(2));
 ```
+
+---
+
+## Generic Type
+
+- perbedaan antara `type` dan `interface` adalah, `interface` lebih ke object sedangkan `type` lebih ke variable biasa
+
+```ts
+type NamaGeneric<T> = T;
+
+function genericFunction<T>(value: T): NamaGeneric<T> {
+  return value;
+}
+
+console.log(genericFunction<string>("hello"));
+```
