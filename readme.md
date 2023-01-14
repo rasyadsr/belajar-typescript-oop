@@ -727,3 +727,27 @@ class ClassBaru<T> {
 const classA = new ClassA();
 const classBaru = new ClassBaru(classA);
 ```
+
+---
+
+## Generic Constraint
+
+- terkadang kita juga butuh menampilkan beberapa option di dalam setiap type yang masuk ke dalam generic
+
+```ts
+interface Length {
+  length: number;
+}
+// parameter generic T ini nantinya akan mempunyai options length, karena generic T extends ke interface Length
+function generics24<T extends Length>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+
+const generics24a = generics24("fruhfur"); // pada dasarnya, string memang mempunyai length
+/**
+ * meski generic bersifat dynamis
+ * namun berbeda denan number, number tidak memiliki length untuk ngakalinnya bungkus parameter dalam sebuah object dan kita set length dan value nya
+ * */
+const generics24b = generics24({ length: 20, value: 23232 });
+```
